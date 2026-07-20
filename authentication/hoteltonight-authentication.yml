@@ -1,0 +1,20 @@
+generated: '2026-07-19'
+method: searched
+source: https://api-docs.hoteltonight.com/
+docs: https://api-docs.hoteltonight.com/
+summary:
+  types: [http]
+  http_schemes: [basic]
+  notes: >-
+    HotelTonight's partner/agent API is gated. The partner documentation portal
+    at api-docs.hoteltonight.com requires HTTP Basic authentication (username +
+    password) to view, and hotel partners sign in to the agent surface at
+    api.hoteltonight.com. No public OpenAPI securitySchemes are published, and
+    there is no open, self-service developer credentialing flow (no API keys,
+    OAuth 2.0, or OpenID Connect surfaced publicly).
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  applies_to: https://api-docs.hoteltonight.com/
+  sources: [https://api-docs.hoteltonight.com/]
