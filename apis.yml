@@ -1,8 +1,30 @@
 aid: hoteltonight
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hoteltonight.png
 name: HotelTonight
-description: HotelTonight is a company surfaced as a portfolio company of battery-ventures and added to
-  the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  HotelTonight is a last-minute hotel booking service, now part of Airbnb, that
+  lets travelers discover and reserve same-day and near-term hotel deals across
+  thousands of properties worldwide through its consumer mobile apps and website.
+  For hotels, HotelTonight operates a partner (extranet) program and a private
+  agent/partner API used to manage inventory, rates, and availability. The API
+  surface is gated behind partner authentication (HTTP Basic auth at the partner
+  documentation portal and an agent sign-in at api.hoteltonight.com); HotelTonight
+  does not publish an open, self-service developer API, an OpenAPI/Swagger spec,
+  first-party client SDKs, or a public /.well-known discovery surface. This API
+  Evangelist profile was surfaced as a Battery Ventures portfolio company and
+  enriched by probing the provider's real public surfaces.
 url: https://raw.githubusercontent.com/api-evangelist/hoteltonight/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,12 +34,60 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Travel
+- Hotels
+- Booking
+- Hospitality
+- Partner API
+- Airbnb
+apis:
+- name: HotelTonight Partner API
+  description: >-
+    Private partner/agent API used by hotels to manage inventory, rates, and
+    availability with HotelTonight. Access is gated behind partner credentials
+    (HTTP Basic auth); no public OpenAPI specification is published.
+  humanURL: https://api-docs.hoteltonight.com/
+  baseURL: https://api.hoteltonight.com
+  properties:
+  - type: Documentation
+    url: https://api-docs.hoteltonight.com/
+  - type: Login
+    url: https://api.hoteltonight.com/agents/password/new
+common:
+- type: VulnerabilityDisclosure
+  url: security/hoteltonight-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.hoteltonight.com/terms-of-use/security
+- type: Website
+  url: https://www.hoteltonight.com
+- type: DeveloperPortal
+  url: https://api-docs.hoteltonight.com/
+- type: Documentation
+  url: https://api-docs.hoteltonight.com/
+- type: GitHubOrganization
+  url: https://github.com/hoteltonight
+- type: Support
+  url: https://www.hoteltonight.com/customer-support
+- type: SignUp
+  url: https://www.hoteltonight.com/hotel-partners
+- type: TermsOfService
+  url: https://www.hoteltonight.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.hoteltonight.com/terms-of-use/privacy-policy
+- type: DomainSecurity
+  url: security/hoteltonight-domain-security.yml
+- type: Authentication
+  url: authentication/hoteltonight-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
